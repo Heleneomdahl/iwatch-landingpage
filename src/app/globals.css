@@ -1,6 +1,6 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -10,17 +10,171 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] 1fr [middle] minmax(0, 1200px) [content-end] 1fr [full-end];
+  background-color: #b6ccda;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+section {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: subgrid;
+  color: white;
+
+  > * {
+    grid-column: content;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+
+    p {
+      padding-top: 7px;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 7px;
+    }
+    p:hover {
+      color: #b6ccda;
+      border-radius: 50px;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+  .flex-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .flex-header2 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  .flex-box {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 0.1fr;
+    align-items: center;
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 600;
+      span {
+        font-weight: 100;
+      }
+    }
+  }
+  .buy {
+    color: white;
+    border-radius: 50px;
+    border: solid 3px white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    background-color: transparent;
+    margin-top: -5rem;
+    font-size: 1.6rem;
+  }
+  .buy:hover {
+    color: #b6ccda;
+    background-color: white;
+    cursor: pointer;
+  }
+  .flex-btm {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+
+    .flex-arr {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+    .grid-img {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      figure {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: -0.5rem;
+          top: 3rem;
+          width: 120px;
+          height: 65px;
+          border-radius: 1rem;
+          z-index: -1;
+          background: var(--bg);
+          border: 1px solid rgba(255, 255, 255, 0.181);
+        }
+        img {
+          height: auto;
+          width: 100px;
+          object-fit: contain;
+        }
+        img:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    img {
+      max-width: 100px;
+    }
+  }
+  .color-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .circle.navy {
+    background-color: #404354;
+    border: 1px solid #353745;
+  }
+  .circle.mint {
+    background-color: #6addcc;
+    border: 1px solid #5dc1b2;
+  }
+  .circle.ocean {
+    background-color: #f9cdc4;
+    border: 1px solid #d2ada5;
+  }
+  .circle.active {
+    border: 3px solid white;
+  }
+  .watch-type-img {
+    cursor: pointer;
+  }
 }
