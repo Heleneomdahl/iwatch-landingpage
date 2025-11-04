@@ -43,9 +43,24 @@ const DummyComponent = () => {
             <Image src={selectedImage} alt="watch" />
           </div>
           <div className="color-buttons">
-            <WatchTypeButton color="navy" label="Navy" onSelect={() => setSelectedImage(Navy)} isActive={selectedImage === Navy} />
-            <WatchTypeButton color="mint" label="Mint" onSelect={() => setSelectedImage(Mint)} isActive={selectedImage === Mint} />
-            <WatchTypeButton color="ocean" label="Ocean" onSelect={() => setSelectedImage(Ocean)} isActive={selectedImage === Ocean} />
+            <WatchTypeButton
+              color="navy"
+              label="Navy"
+              onSelect={() => setSelectedImage(Navy)}
+              isActive={selectedImage === Navy}
+            />
+            <WatchTypeButton
+              color="mint"
+              label="Mint"
+              onSelect={() => setSelectedImage(Mint)}
+              isActive={selectedImage === Mint}
+            />
+            <WatchTypeButton
+              color="ocean"
+              label="Ocean"
+              onSelect={() => setSelectedImage(Ocean)}
+              isActive={selectedImage === Ocean}
+            />
           </div>
         </div>
         <button class="buy">Buy Now</button>
@@ -57,13 +72,28 @@ const DummyComponent = () => {
           </div>
           <div className="grid-img">
             <figure style={{ "--bg": "#40435469" }}>
-              <WatchTypes src={Navy} alt="Navy watch" onClick={() => setSelectedImage(Navy)} isActive={selectedImage === Navy} />
+              <WatchTypes
+                src={Navy}
+                alt="Navy watch"
+                onClick={() => setSelectedImage(Navy)}
+                isActive={selectedImage === Navy}
+              />
             </figure>
             <figure style={{ "--bg": "#6addccc5" }}>
-              <WatchTypes src={Mint} alt="Mint watch" onClick={() => setSelectedImage(Mint)} isActive={selectedImage === Mint} />
+              <WatchTypes
+                src={Mint}
+                alt="Mint watch"
+                onClick={() => setSelectedImage(Mint)}
+                isActive={selectedImage === Mint}
+              />
             </figure>
             <figure style={{ "--bg": "#f9cdc475" }}>
-              <WatchTypes src={Ocean} alt="Ocean watch" onClick={() => setSelectedImage(Ocean)} isActive={selectedImage === Ocean} />
+              <WatchTypes
+                src={Ocean}
+                alt="Ocean watch"
+                onClick={() => setSelectedImage(Ocean)}
+                isActive={selectedImage === Ocean}
+              />
             </figure>
           </div>
         </div>
